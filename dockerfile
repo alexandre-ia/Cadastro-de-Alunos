@@ -8,3 +8,5 @@ COPY . /usr/share/nginx/html
 EXPOSE 80
 
 # O Nginx já inicia automaticamente, então não precisamos definir CMD
+# docker build -t registro-alunos.
+# docker run -d -p 8080:80 registro-alunos
