@@ -3,58 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🧑‍🎓 Cadastro de Alunos - DevTech Academy</title>
+    <title>📋 Gestão Acadêmica - Painel</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Registro Acadêmico de Alunos</h1>
+    <header>
+        <h1>📋Gestão de Alunos</h1>
+    </header>
 
-    <form id="cadastroForm">
-        <label for="nome">Nome Completo:</label>
-        <input type="text" id="nome" name="nome" placeholder="Digite o nome do aluno" required>
+    <main class="painel-layout">
+        
+        <section class="coluna-cadastro">
+            <h2>Registrar Novo Aluno</h2>
+            <form id="cadastroForm">
+                <label for="nome">Nome Completo:</label>
+                <input type="text" id="nome" name="nome" placeholder="Nome do aluno" required>
 
-        <label for="idade">Idade:</label>
-        <input type="number" id="idade" name="idade" min="15" max="99" placeholder="Idade (mín. 15)" required>
+                <label for="idade">Idade:</label>
+                <input type="number" id="idade" name="idade" min="15" max="99" placeholder="Idade" required>
 
-        <label for="matricula">Matrícula:</label>
-        <input type="text" id="matricula" name="matricula" placeholder="Ex: M123456" required>
+                <label for="matricula">Matrícula:</label>
+                <input type="text" id="matricula" name="matricula" placeholder="Ex: TE-2024001" required>
 
-        <label for="curso">Curso:</label>
-        <select id="curso" name="curso" required>
-            <option value="" disabled selected>Selecione um curso</option>
-            <option value="JavaScript">JavaScript</option>
-            <option value="Python">Python</option>
-            <option value="Java">Java</option>
-            </select>
+                <label for="curso">Curso:</label>
+                <select id="curso" name="curso" required>
+                    <option value="" disabled selected>Selecione o curso</option>
+                    <option value="JavaScript">JavaScript</option>
+                    <option value="Python">Python</option>
+                    <option value="Java">Java</option>
+                </select>
 
-        <label for="notaFinal">Nota Final (0 a 10):</label>
-        <input type="number" id="notaFinal" name="notaFinal" step="0.1" min="0" max="10" placeholder="Nota (0.0 a 10.0)" required>
+                <label for="notaFinal">Nota Final (0 a 10):</label>
+                <input type="number" id="notaFinal" name="notaFinal" step="0.1" min="0" max="10" placeholder="Nota de 0.0 a 10.0" required>
 
-        <button type="button" class="btn-cadastrar" id="btn-cadastro">📝 Registrar Aluno</button>
-    </form>
+                <button type="button" class="btn-cadastrar" id="btn-cadastro">➕ Registrar Aluno</button>
+            </form>
+        </section>
 
-    <div class="opcoes">
-        <button id="btn-aprovados">✅ Aprovados</button>
-        <button id="btn-media-notas">📊 Média Total das Notas</button>
-        <button id="btn-media-idades">🎂 Média das Idades</button>
-        <button id="btn-listar-alunos">📄 Listar Todos os Alunos</button>
-        <button id="btn-alunos-curso">📚 Alunos por Curso</button>
+        <section class="coluna-dados">
+            <div class="opcoes">
+                <button id="btn-listar-alunos">📄 Listar Todos</button>
+                <button id="btn-aprovados">✅ Aprovados</button>
+                <button id="btn-alunos-curso">📖 Alunos por Curso</button>
+                <button id="btn-media-notas">📊 Média das Notas</button>
+                <button id="btn-media-idades">🎂 Média das Idades</button>
+            </div>
+
+            <h2>Alunos Registrados</h2>
+            <div class="tabela-container">
+                <table id="minhaTabela">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Idade</th>
+                            <th>Matrícula</th>
+                            <th>Curso</th>
+                            <th>Nota Final</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+    
+    <div id="popup" class="popup-overlay" style="display: none;">
+        <div class="popup-content">
+            <span class="popup-close" id="popup-close">&times;</span>
+            <div id="popup-data">
+                </div>
+        </div>
     </div>
-
-    <table id="minhaTabela">
-        <thead>
-            <tr>
-                <th>Nome</th>
-                <th>Idade</th>
-                <th>Matrícula</th>
-                <th>Curso</th>
-                <th>Nota Final</th>
-                <th>Ações</th>
-            </tr>
-        </thead>
-        <tbody>
-        </tbody>
-    </table>
 
     <script src="script.js"></script>
 </body>

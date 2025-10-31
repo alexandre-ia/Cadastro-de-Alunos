@@ -266,10 +266,10 @@ function abrirPopup(titulo, conteudoHTML) {
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Botão de Cadastro
+    
     document.getElementById('btn-cadastro').addEventListener('click', adicionarDados);
 
-    // Botões de Relatórios
+    
     document.getElementById('btn-aprovados').addEventListener('click', listarAlunosAprovados);
     document.getElementById('btn-media-notas').addEventListener('click', calcularMediaNotas);
     document.getElementById('btn-media-idades').addEventListener('click', calcularMediaIdades);
