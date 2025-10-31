@@ -1,0 +1,274 @@
+/* Configurações Básicas e Modo Escuro */
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #121212; /* Fundo escuro */
+    color: #e0e0e0; /* Texto claro */
+    padding-bottom: 50px;
+}
+
+/* Título */
+h1 {
+    text-align: center;
+    color: #00bcd4; /* Ciano de destaque */
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+/* Formulário de Cadastro */
+form {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 40px;
+    border: 1px solid #333;
+    border-radius: 10px;
+    background-color: #1e1e1e; /* Fundo mais claro para o formulário */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #b3e5fc; /* Azul claro para labels */
+}
+
+input[type="text"],
+input[type="number"],
+select { /* Adicionado o estilo para o select  */
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background-color: #2c2c2c; /* Fundo escuro para inputs/select */
+    color: #e0e0e0;
+    transition: border-color 0.3s;
+}
+
+input:focus, select:focus {
+    border-color: #00bcd4; /* Ciano no foco */
+    outline: none;
+}
+
+/* Botão de Cadastro */
+.btn-cadastrar {
+    background-color: #00bcd4; /* Ciano principal */
+    color: #121212; /* Texto escuro no botão */
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin: 30px auto 0;
+    width: 200px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-cadastrar:hover {
+    background-color: #00e5ff; /* Ciano mais claro no hover */
+    transform: translateY(-2px);
+}
+
+/* Botões de Opções */
+.opcoes {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; 
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.opcoes button {
+    margin: 10px;
+    padding: 10px 15px;
+    border: 1px solid #03a9f4; 
+    border-radius: 20px; 
+    cursor: pointer;
+    background-color: #03a9f4; 
+    color: white;
+    font-weight: 500;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.opcoes button:hover {
+    background-color: #0288d1; 
+    box-shadow: 0 0 10px rgba(3, 169, 244, 0.6);
+}
+
+/* Tabela de Dados */
+table {
+    width: 95%;
+    max-width: 1000px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background-color: #1e1e1e; 
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.8);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th, td {
+    border: 1px solid #333;
+    padding: 12px;
+    text-align: center;
+}
+
+th {
+    background-color: #03a9f4; 
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+tr:nth-child(even) {
+    background-color: #242424; 
+}
+
+tr:hover {
+    background-color: #383838; 
+    color: #00bcd4;
+    cursor: pointer;
+}
+
+/* --- ADICIONAIS PARA O JS E NOVOS ESTILOS --- */
+
+/* Estilos para a Tabela */
+.aluno-aprovado {
+    border-left: 5px solid #00bcd4; /* Ciano para aprovados [cite: 29] */
+}
+
+.aluno-reprovado {
+    border-left: 5px solid #ff5252; /* Vermelho para reprovados */
+}
+
+/* Botões de Ação na Tabela (dentro do td) */
+.btn-acao {
+    padding: 6px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    margin: 0 4px;
+    transition: all 0.2s;
+}
+
+.btn-editar {
+    background-color: #03a9f4; 
+    color: white;
+}
+
+.btn-editar:hover {
+    background-color: #0288d1;
+}
+
+.btn-excluir {
+    background-color: #ff5252; 
+    color: white;
+}
+
+.btn-excluir:hover {
+    background-color: #ff1744;
+}
+
+/* --- ESTILOS DO POP-UP (MODAL) --- */
+
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-content {
+    background-color: #1e1e1e; /* Fundo do modal ESCURO */
+    color: #e0e0e0; /* Texto CLARO */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.9);
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    border: 1px solid #00bcd4; 
+}
+
+.popup-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #00bcd4;
+    line-height: 1;
+    transition: color 0.2s;
+}
+
+.popup-close:hover {
+    color: white;
+}
+
+.popup-content h3 {
+    color: #00bcd4;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #333;
+    padding-bottom: 5px;
+}
+
+.modal-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+}
+
+.modal-list li {
+    padding: 8px 0;
+    border-bottom: 1px dashed #333;
+}
+
+.modal-list li:last-child {
+    border-bottom: none;
+}
+
+.modal-info, .modal-result {
+    text-align: center;
+    margin: 15px 0;
+    font-size: 1.1em;
+}
+
+.modal-result strong {
+    font-size: 1.5em;
+    color: #03a9f4;
+}
+
+.modal-btn-close {
+    display: block;
+    width: 100px;
+    margin: 20px auto 0;
+    padding: 10px;
+    background-color: #03a9f4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.modal-btn-close:hover {
+    background-color: #0288d1;
+}
